@@ -1,24 +1,4 @@
-# vue-test
+vue 开发环境下修改代码，热更新时会添加多个当前的组件?
 
-## Project setup
-```
-pnpm install
-```
-
-### Compiles and hot-reloads for development
-```
-pnpm run serve
-```
-
-### Compiles and minifies for production
-```
-pnpm run build
-```
-
-### Lints and fixes files
-```
-pnpm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+在文本框中输入内容，然后修改组件内容后回到浏览器，查看组件所在的 dom
+结构，可以发现重复渲染
