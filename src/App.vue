@@ -9,12 +9,13 @@
       enter-active-class="animate__animated animate__slideInLeft"
       leave-active-class="animate__animated animate__fadeOutRight"
     >
-      <component
-        v-if="show"
+      <!-- 这里使用 component 是为了用 router-view 时能用到，实际上我换成直接用组件也会重复渲染 -->
+      <HelloWorld v-if="show" @vue:mounted="childrenMounted"></HelloWorld>
+      <!-- <component
         :key="Math.random()"
         :is="HelloWorld"
         @vue:mounted="childrenMounted"
-      />
+      /> -->
     </transition>
   </div>
 </template>
