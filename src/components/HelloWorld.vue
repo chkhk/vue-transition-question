@@ -1,11 +1,6 @@
 <template>
   <div id="random-choice" class="f-c-c">
-    <textarea
-      cols="30"
-      rows="5"
-      v-model="text"
-      style="resize: vertical"
-    ></textarea>
+    <input cols="30" rows="5" v-model="text" style="resize: vertical" />
     <div class="box f-c">
       <div
         v-for="(i, index) in textArr"
@@ -20,7 +15,8 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue';
+// eslint-disable-next-line no-unused-vars
+import { computed, ref, onBeforeUnmount } from 'vue';
 
 const text = ref('');
 const allStr = ref(null);
@@ -33,8 +29,13 @@ const textArr = computed(() => {
   }
 });
 
+/* onBeforeUnmount(() => {
+  // there is no problem
+  allStr.value = null;
+}); */
+
 // 任意代码修改都可复现
-// console.log(1);
+console.log(1);
 </script>
 
 <style scoped>
